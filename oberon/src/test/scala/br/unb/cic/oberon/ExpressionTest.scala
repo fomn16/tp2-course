@@ -39,6 +39,16 @@ class ExpressionTest extends FunSuite {
     assert(intN1 == sub.eval())
   }
 
+  test("Evaluating a MultExp(-3, 4) should lead to an IntValue(-12)") {
+    val intN3 = new IntValue(-3)
+    val int4 = new IntValue(4)
+    val intN12 = new IntValue(-12)
+
+    val mult  = MultExp(intN3, int4) 
+
+    assert(intN12 == mult.eval())
+  }
+
   test("Evaluating a LtExp(3, 4) should lead to an BoolValue(true)") {
     val t = new IntValue(3)
     val i = new IntValue(4)
